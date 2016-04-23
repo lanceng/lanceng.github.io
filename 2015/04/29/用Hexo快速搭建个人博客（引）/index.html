@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>用Hexo快速搭建搭建个人博客(引) | Lanceng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是Hexohexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。      
+类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在github上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Hexo快速搭建搭建个人博客(引)">
+<meta property="og:url" content="http://lanceng.com/2015/04/29/用Hexo快速搭建个人博客（引）/index.html">
+<meta property="og:site_name" content="Lanceng's Blog">
+<meta property="og:description" content="什么是Hexohexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。      
+类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在github上。">
+<meta property="og:image" content="https://lanceng.github.io/image/soon.jpg">
+<meta property="og:image" content="https://lanceng.github.io/image/dnspod.png">
+<meta property="og:image" content="https://lanceng.github.io/image/ww1.png">
+<meta property="og:image" content="https://lanceng.github.io/image/ww.png">
+<meta property="og:updated_time" content="2015-04-30T16:37:25.756Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Hexo快速搭建搭建个人博客(引)">
+<meta name="twitter:description" content="什么是Hexohexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。      
+类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在github上。">
+<meta name="twitter:image" content="https://lanceng.github.io/image/soon.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Lanceng&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/author.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Smile Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/ORACLE/" style="font-size: 10px;">ORACLE</a> <a href="/tags/canvas画布/" style="font-size: 10px;">canvas画布</a> <a href="/tags/excel操作/" style="font-size: 10px;">excel操作</a> <a href="/tags/mongodb数据-nodejs/" style="font-size: 10px;">mongodb数据 nodejs</a> <a href="/tags/node-js开发/" style="font-size: 10px;">node.js开发</a> <a href="/tags/svg-api/" style="font-size: 10px;">svg api</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/博客编写工具/" style="font-size: 10px;">博客编写工具</a> <a href="/tags/图形判断/" style="font-size: 10px;">图形判断</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/直销系统基金知识/" style="font-size: 10px;">直销系统基金知识</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Smile Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/author.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Smile Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-用Hexo快速搭建个人博客（引）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/29/用Hexo快速搭建个人博客（引）/" class="article-date">
+  	<time datetime="2015-04-29T07:05:50.000Z" itemprop="datePublished">2015-04-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用Hexo快速搭建搭建个人博客(引)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/tools/">tools</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h3><p>hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。      </p>
+<p>类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在github上。<br><a id="more"></a>  </p>
+<h3 id="为什么用Heox"><a href="#为什么用Heox" class="headerlink" title="为什么用Heox"></a>为什么用Heox</h3><p>作者原话：       </p>
+<pre><code>不可思议的快速 ─ 只要一眨眼静态文件即生成完成
+支持 Markdown
+仅需一道指令即可部署到 GitHub Pages 和 Heroku
+已移植 Octopress 插件
+高扩展性、自订性
+兼容于 Windows, Mac &amp; Linux         
+</code></pre><p>还有几点：易用，不仅部署简单，启动也简单。轻巧、用户多。     </p>
+<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p>下载git并执行安装。      </p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>在windows下安装Node.js很简单，只需要到<a href="https://nodejs.org/" target="_blank" rel="external">Node.js官网</a>下载windows下的安装程序并安装即可。       </p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>利用 npm 命令即可安装。（在任意位置点击鼠标右键，选择Git bash）    </p>
+<pre><code>npm install -g hexo      
+</code></pre><h3 id="创建Hexo文件夹"><a href="#创建Hexo文件夹" class="headerlink" title="创建Hexo文件夹"></a>创建Hexo文件夹</h3><p>安装完成后，在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git bash)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。        </p>
+<pre><code>hexo init     
+</code></pre><h3 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h3><pre><code>hexo install      
+</code></pre><h3 id="本地查看"><a href="#本地查看" class="headerlink" title="本地查看"></a>本地查看</h3><pre><code>hexo g
+hexo s    
+</code></pre><p>好了现在我已经把本地的博客搭建起来，打开浏览器输入本地浏览地址就可以看到效果了。    </p>
+<h3 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h3><p>登入到<a href="https://github.com" target="_blank" rel="external">Github</a>官网，注册账号。已有账号可以跳过，没有的，请在此进行注册，很简单，这里就不介绍了。      </p>
+<h3 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h3><p>在自己Github主页右下角，创建一个新的repository。比如我的Github账号是lanceng，那么我应该创建的repository名字应该是lanceng.github.io。       </p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>编辑_config.yml(在H:\hexo下)。你在部署时，要把下面的zippera都换成你的账号名。      </p>
+<pre><code>deploy:
+type: github
+repository: https://github.com/zippera/zippera.github.io.git
+branch: master      
+</code></pre><p>据说最新版本的hexo 中，这里的 type 要写成 git，而不是 github。<br>执行下列指令即可完成部署。        </p>
+<pre><code>hexo g
+hexo d      
+</code></pre><p>注意：有些新用户需要设置 ssh，否则上述命令会失败。ssh 的介绍和设置方法请看官方教程，不用担心，很简单。<br>记住：每次修改本地文件后，需要hexo generate才能保存。每次使用命令时，都要在H:\hexo目录下。<br>Okay,我们的博客已经完全搭建起来了，在浏览器访问lanceng.github.io就能看到你的成就了！       </p>
+<h3 id="一些bugs"><a href="#一些bugs" class="headerlink" title="一些bugs"></a>一些bugs</h3><pre><code>1.有网友反应右键菜单中没有git bash选项，可以进入开始菜单找到git bash，然后通过cd进入相应目录执行命令。       
+2.在github部署完成之后，马上访问可能出现404错误，这是正常的，（最多）等待十分钟左右就可以访问了。如果还不行，那很可能是 github 发送给你的验证邮件你没有打开看，据多方反映，验证后就没问题了。       
+3.如果在hexo d之后出现fatal: &apos;username.github.io&apos; does not appear to be a git repository，一是检查 repo 的名字是否合乎规范、是否含有大写字母、config.yml 中的 deploy 配置是否正确，二是把 git bash 关掉，重新打开再执行命令。        
+4.有的同学可能不是 IT 界的，或者对shell 命令不太了解。在要求输入密码时，你输入之后密码是不显示的，这是为了安全，并非是你没输上。       
+5.出现乱码的，不要使用 windows 中的「记事本」打开并编辑文件，推荐使用 sublime text，很简单。如果已经在「记事本」中编辑过，需要使用 sublime text 转码为「utf8」。        
+6.安装 hexo 时卡在那儿不动，很可能是网络不给力，能全局 break wall 就好了。     
+7.遇到什么其他的问题，不妨删除.deploy 和db.json 再重新生成试一试。       
+</code></pre><h3 id="一些Hexo的命令"><a href="#一些Hexo的命令" class="headerlink" title="一些Hexo的命令"></a>一些Hexo的命令</h3><pre><code>hexo g = hexo generate    
+hexo s = hexo server       
+hexo d = hexo deploy      
+hexo n = hexo new        
+</code></pre><p>更多关于Hexo命令可以查看Hexo官网。     </p>
+<h3 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h3><p>站点配置用到两个文件，一个是对整站的配置H:\hexo_config.yml，另一个是对主题的配置H:\hexo\themes\light_config.yml，我们来分别介绍。     </p>
+<p>H:\hexo\ _config.yml      </p>
+<pre><code># Hexo Configuration
+## Docs: http://zespia.tw/hexo/docs/configure.html
+## Source: https://github.com/tommy351/hexo/
+
+# Site 这里的配置，哪项配置反映在哪里，可以参考我的博客
+title: Lanceng #站点名，站点左上角
+subtitle: Walk steps step by step #副标题，站点左上角
+description: Walk steps step by step #给搜索引擎看的，对站点的描述，可以自定义
+author: Smile Zhang #在站点左下角可以看到
+email: #你的联系邮箱
+language: zh-CN #中国人嘛，用中文
+
+# URL #这项暂不配置，绑定域名后，欲创建sitemap.xml需要配置该项
+## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
+url: http://lcsmile.cn
+root: /
+permalink: :year/:month/:day/:title/
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+
+# Writing 文章布局、写作格式的定义，不修改
+new_post_name: :title.md # File name of new posts
+default_layout: post
+auto_spacing: false # Add spaces between asian characters and western characters
+titlecase: false # Transform title into titlecase
+max_open_file: 100
+filename_case: 0
+highlight:
+  enable: true
+  backtick_code_block: true
+  line_number: true
+  tab_replace:
+
+# Category &amp; Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Archives 默认值为2，这里都修改为1，相应页面就只会列出标题，而非全文
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 1
+category: 1
+tag: 1
+
+# Server 不修改
+## Hexo uses Connect as a server
+## You can customize the logger format as defined in
+## http://www.senchalabs.org/connect/logger.html
+port: 4000
+logger: false
+logger_format:
+
+# Date / Time format 日期格式，不修改
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: MMM D YYYY
+time_format: H:mm:ss
+
+# Pagination 每页显示文章数，可以自定义，我将10改成了5
+## Set per_page to 0 to disable pagination
+per_page: 5
+pagination_dir: page
+
+# Disqus Disqus插件，我们会替换成“多说”，不修改
+disqus_shortname:
+
+# Extensions 这里配置站点所用主题和插件，暂默认，后面会介绍怎么修改
+## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
+## Themes: https://github.com/tommy351/hexo/wiki/Themes
+theme: light
+exclude_generator:
+plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
+
+# Deployment 站点部署到github要配置，上一节中已经讲过
+## Docs: http://zespia.tw/hexo/docs/deploy.html
+deploy:
+  type: github
+  repository: https://github.com/lanceng/lanceng.github.io.git
+  branch: master       
+</code></pre><p>现在可以hexo generate，hexo server，打开localhost:4000查看效果了。<br>H:\hexo\themes\light_config.yml         </p>
+<pre><code>menu: #站点右上角导航栏，暂时默认，后面介绍修改
+  首页: /
+  存档: /archives
+  关于: /about
+  ToDo: /todolist
+
+
+widgets: #站点右边栏，暂时默认，后面介绍修改和添加
+- search
+- category
+- tagcloud
+- weibo
+- blogroll
+
+
+excerpt_link: 阅读全文 #替换为中文
+
+plugins: 
+
+
+twitter: #右边栏要显示twitter展示的话，需要在此设置
+  username: lanceng
+  show_replies: false
+  tweet_count: 5
+
+addthis: #SNS分享，身在天朝，当然用“百度分享”，暂时默认，后面会介绍
+  enable: true
+  pubid:
+  facebook: true
+  twitter: true
+  google: true
+  pinterest: true
+
+fancybox: true #图片效果，默认
+
+google_analytics: #要使用google_analytics进行统计的话，这里需要配置ID，暂时默认，后面介绍
+rss:  #生成RSS，需要配置路径，暂时默认，后面介绍        
+</code></pre><p>好了，站点配置好了，我想发表一篇文章，怎么做呢？    </p>
+<p>1.hexo new “my new post”<br>2.在H:\hexo\source_posts中打开这个文件（打开方式用“记事本”即可），配置开头。       </p>
+<pre><code>title: my new post #可以改成中文的，如“新文章”
+date: 2013-05-29 07:56:29 #发表日期，一般不改动
+categories: blog #文章文类
+tags: [博客，文章] #文章标签，多于一项时用这种格式
+---
+#这里是正文，用markdown写。       
+</code></pre><p>1.hexo server，访问localhost:4000预览效果。（退出server用Ctrl+c）<br>2.hexo deploy，同步到github。访问网站看看效果。        </p>
+<p>现在为止，我们已经搭建起博客，进行一些基本配置，并学会了怎么发表文章。后面会陆续介绍一些高级点的个性化设置，不过在此之前，你可以正常发表博客了。      </p>
+<h3 id="添加“多说”评论"><a href="#添加“多说”评论" class="headerlink" title="添加“多说”评论"></a>添加“多说”评论</h3><p>hexo默认使用国外比较流行的disqus，不过，按照“因地制宜”的原则，我们修改为国内用的多又好用的“多说”评论系统。步骤非常简单：<br>1.在多说进行注册，获得通用代码。<br>2.将通用代码粘贴到themes\light\layout_partial\comment.ejs里面，如下：           </p>
+<pre><code>&lt;% if ( page.comments){ %&gt;
+&lt;section id=&quot;comment&quot;&gt;
+通用代码
+&lt;/section&gt;
+&lt;% } %&gt;         
+</code></pre><p>很多网友反映自己使用的非 light 主题中找不到相应的文件。我的这些修改都是在 light主题中，其他主题请参考《Hexo使用多说教程》。         </p>
+<h3 id="添加『页面导航』"><a href="#添加『页面导航』" class="headerlink" title="添加『页面导航』"></a>添加『页面导航』</h3><p>在刚才添加「多说」评论的文件中，加入一段代码，如下：       </p>
+<pre><code>&lt;% if ( page.comments){ %&gt;
+
+ &lt;nav id=&quot;pagination&quot; &gt;
+    &lt;% if (page.prev) { %&gt;
+    &lt;a href=&quot;&lt;%- config.root %&gt;&lt;%- page.prev.path %&gt;&quot; class=&quot;alignleft prev&quot; &gt;&lt;%= __(&apos;prev&apos;) %&gt;&lt;/a&gt;
+    &lt;% } %&gt;
+    &lt;% if (page.next) { %&gt;
+    &lt;a href=&quot;&lt;%- config.root %&gt;&lt;%- page.next.path %&gt;&quot; class=&quot;alignright next&quot; &gt;&lt;%= __(&apos;next&apos;) %&gt;&lt;/a&gt;
+    &lt;% } %&gt;
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;section id=&quot;comment&quot;&gt;        
+</code></pre><h3 id="添加“百度分享”"><a href="#添加“百度分享”" class="headerlink" title="添加“百度分享”"></a>添加“百度分享”</h3><p>到百度分享获得代码，在themes/light/layout/_partial/article.ejs中，将&lt;%-partial(‘post/share’)%&gt;删掉，替换为百度分享的代码。         </p>
+<h3 id="添加小图标"><a href="#添加小图标" class="headerlink" title="添加小图标"></a>添加小图标</h3><p>在themes/light/layout/_partial/head.ejs里将<link href="<%- config.root %>favicon.png" rel="icon">替换为<link href="<%- config.root %>favicon.ico" rel="icon" type="image/x-ico">。将favicon.ico图标文件放在source目录下。制作图标的网站，[1]:<a href="http://www.faviconer.com。" target="_blank" rel="external">http://www.faviconer.com。</a>     </p>
+<h3 id="添加分类、标签云widget"><a href="#添加分类、标签云widget" class="headerlink" title="添加分类、标签云widget"></a>添加分类、标签云widget</h3><p>很简单，在themes/light/_config.yml中，添加如下：     </p>
+<pre><code>widgets:
+- category
+- tagcloud        
+</code></pre><h3 id="添加友情链接widget"><a href="#添加友情链接widget" class="headerlink" title="添加友情链接widget"></a>添加友情链接widget</h3><p>1.在themes/light/layout/_widget中新建名为blogroll.ejs的文件，编辑内容如下：       </p>
+<pre><code>&lt;div class=&quot;widget tag&quot;&gt;
+&lt;h3 class=&quot;title&quot;&gt;友情链接&lt;/h3&gt;
+&lt;ul class=&quot;entry&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;http://zipperary.com/&quot; title=&quot;Zippera&apos;s Blog&quot;&gt;Zippera&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;        
+</code></pre><p>2.在themes/light/_config.yml中，添加如下：       </p>
+<pre><code>widgets:
+- blogroll       
+</code></pre><h3 id="生成post时默认生成categories配置项"><a href="#生成post时默认生成categories配置项" class="headerlink" title="生成post时默认生成categories配置项"></a>生成post时默认生成categories配置项</h3><p>在scaffolds/post.md中，添加一行categories:。同理可应用在page.md和photo.md。       </p>
+<h3 id="添加新浪微博widget-微博秀"><a href="#添加新浪微博widget-微博秀" class="headerlink" title="添加新浪微博widget(微博秀)"></a>添加新浪微博widget(微博秀)</h3><p>1.去新浪微博开放平台设置和生成微博秀代码。<br>2.在themes/light/layout/_widget中新建名为weibo.ejs的文件，将刚才的代码直接保存到这里。<br>3.在themes/light/_config.yml中，添加如下：         </p>
+<pre><code>widgets:
+- weibo        
+</code></pre><h3 id="导航栏添加”关于”"><a href="#导航栏添加”关于”" class="headerlink" title="导航栏添加”关于”"></a>导航栏添加”关于”</h3><p>1.hexo new page “about”<br>2.到source/about/index.md编辑内容。<br>3.在themes/light/_config.yml中，添加如下：        </p>
+<pre><code>menu:
+  关于: /about          
+</code></pre><h3 id="主页文章显示摘要"><a href="#主页文章显示摘要" class="headerlink" title="主页文章显示摘要"></a>主页文章显示摘要</h3><p>编辑md文件的时候，在要作为摘要的文字后面添加即可。<br>优化是无止境的，今天先写这些。          </p>
+<h3 id="速度优化"><a href="#速度优化" class="headerlink" title="速度优化"></a>速度优化</h3><p>由于 Google 被大陆屏蔽，Github 从大陆访问也比较慢，且不太稳定。所以一方面可以把 Blog 迁移到国内，比如我现在使用的Gitcafe提供的免费 Page 服务，又快又好用，赞一个，可以参考Zippera写的<a href="http://zipperary.com/2013/11/23/hexo-to-gitcafe/" target="_blank" rel="external">《托管博客到gitcafe》</a> 。另一方面，建议把 google 提供的 jquery 和 fonts api 全换掉。由于不同的主题其位置不同，最好是搜索一下。<br>Unix/Linux 用户在 shell 中切换到自己的主题目录下面；Windows 用户用 Git Bash 切换到主题目录下面。然后用grep ‘jquery’ -r ./搜索使用 jquery 的位置，如果是用的 google 的，则替换成国内的，我用的是百度，//libs.baidu.com/jquery/2.0.3/jquery.min.js， //libs.baidu.com/jquery/1.8.0/jquery.min.js，替换后如图（我的是 light 主题）：        </p>
+<p><img src="https://lanceng.github.io/image/soon.jpg" alt="Alt text">        </p>
+<p>然后替换google fonts，同样的方法，grep ‘fonts’ -r ./，找到后替换为//fonts.useso.com/css?family=Lato:400,400italic即可。<br>以上只是针对我的版本我的主题，读者根据自己的情况适当调整吧，比如 jquery 的版本号，你现在的是哪个版本就用 baidu 的哪个版本。把地址输入浏览器地址栏看能正确打开嘛，如果可以，说明是可用的。          </p>
+<h3 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h3><p>hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：<br>1.安装RSS插件到本地：npm install hexo-generator-feed<br>2.开启RSS功能：编辑hexo/_config.yml，添加如下代码：         </p>
+<pre><code>plugins:
+- hexo-generator-feed         
+</code></pre><p>在站点添加链接：<br>    在themes/light/_config.yml中，编辑 rss: /atom.xml<br>    在themes/light/layout/_partial/header.ejs中，<ul></ul>之间，添加一样代码<li> <a href="/atom.xml">RSS</a> </li>           </p>
+<h3 id="添加sitemap"><a href="#添加sitemap" class="headerlink" title="添加sitemap"></a>添加sitemap</h3><p>同样的，我们使用hexo提供的插件，方法与添加RSS类似。<br>1.安装sitemap到本地：npm install hexo-generator-sitemap<br>2.开启sitemap功能：编辑hexo/_config.yml，添加如下代码：        </p>
+<pre><code>plugins:
+- hexo-generator-sitemap        
+</code></pre><p>访问lanceng/sitemap.xml即可看到站点地图。不过，sitemap的初衷是给搜索引擎看的，为了提高搜索引擎对自己站点的收录效果，我们最好手动到google和百度等搜索引擎提交sitemap.xml。         </p>
+<h3 id="设置百度统计、Google-Analytics"><a href="#设置百度统计、Google-Analytics" class="headerlink" title="设置百度统计、Google Analytics"></a>设置百度统计、Google Analytics</h3><p>到百度统计和Google Analytics（可能需要穿墙）注册账号、添加网站地址即可，很简单，不详述了。需要注意的是，设置好之后数据要过几个小时才能出现，不用着急。         </p>
+<h3 id="文章中插入图片"><a href="#文章中插入图片" class="headerlink" title="文章中插入图片"></a>文章中插入图片</h3><p>使用markdown写文章，插入图片的格式为!【图片名称 】(链接地址)，这里要说的是链接地址怎么写。对于hexo，有两种方式：<br>1.使用本地路径：在hexo/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。<br>2.使用微博图床，地址<a href="http://weibotuchuang.sinaapp.com/，将图片拖入区域中，会生成图片的URL，这就是链接地址。" target="_blank" rel="external">http://weibotuchuang.sinaapp.com/，将图片拖入区域中，会生成图片的URL，这就是链接地址。</a>       </p>
+<h3 id="加入「fork-me-on-github」"><a href="#加入「fork-me-on-github」" class="headerlink" title="加入「fork me on github」"></a>加入「fork me on github」</h3><p><a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">这里</a>有 github 给出的教程，把代码插入到任意一个全局的模板文件中就行，比如layout.ejs的末尾。      </p>
+<h3 id="发布注意一些问题"><a href="#发布注意一些问题" class="headerlink" title="发布注意一些问题"></a>发布注意一些问题</h3><p>在hexo deploy时，有时会出现这个提示信息warning: LF will be replaced by CRLF，虽然看起来挺乱糟糟的，但不影响使用，可以忽略不计。若想不提示，可以使用如下方法：<br>1.切换到博客的根目录，执行如下命令：git config –global core.autocrlf false<br>2.删除掉该目录下的.git文件夹（可能是隐藏的），命令：rm -rf .git<br>3.重新git init。       </p>
+<p>再deploy试试吧，清新脱俗了。      </p>
+<h2 id="域名购买及映射到Github上"><a href="#域名购买及映射到Github上" class="headerlink" title="域名购买及映射到Github上"></a>域名购买及映射到Github上</h2><p>域名购买可以在<a href="https://www.godaddy.com/about/godaddy-chinese.aspx?isc=bsfndom4&amp;cvosrc=ppc.baidu" target="_blank" rel="external">Goddady</a>或者<a href="http://www.net.cn/?utm_campaign=AD1&amp;utm_source=baidu&amp;utm_medium=brand" target="_blank" rel="external">万网</a>上购买域名。这两个地方，前者服务是在国外，后者是中国国内最大的域名注册商，自行选择吧。             </p>
+<p>方法一：在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如cnfeat.com。<br>方法二：到我的github仓库，点击右下角的「Download ZIP」，下载源文件，解压，找到CNAME文件，用记事本打开，将cnfeat.com修改成你的域名，放进Hexo\source目录下，用hexo命令提交上去。       </p>
+<pre><code>lcsmile.cn      
+</code></pre><p>用DNSpod，快，免费，稳定。<br>注册DNSpod，添加域名，如下图设置。      </p>
+<p><img src="https://lanceng.github.io/image/dnspod.png" alt="Alt text">       </p>
+<p>其中A的两条记录指向的ip地址是github Pages的提供的ip<br>192.30.252.153<br>192.30.252.154       </p>
+<p>如博客不能登录，有可能是github更改了空间服务的ip地址，记得及时到在GitHub Pages查看最新的ip即可<br>www指定的记录是你在github注册的仓库。      </p>
+<p>更改godaddy的Nameservers为DNSpod的NameServers。                 </p>
+<p>1.点击「My Account」，管理我的域名。      </p>
+<p><img src="https://lanceng.github.io/image/ww1.png" alt="Alt text">        </p>
+<p>2.修改DNS服务商     </p>
+<p><img src="https://lanceng.github.io/image/ww.png" alt="Alt text">      </p>
+<p>然后就可以根据<a href="http://lcsmile.cn" target="_blank" rel="external">lcsmile.cn</a>访问自己的博客了。      </p>
+<p>Okay到此为此，一个自己的博客就搭建完成      </p>
+<h2 id="文章出处"><a href="#文章出处" class="headerlink" title="文章出处"></a>文章出处</h2><p>Zippera’s blos:[1]:<a href="http://zipperary.com" target="_blank" rel="external">http://zipperary.com</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/07/JAVA对Excel的导入导出操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          JAVA对Excel的导入导出操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/20/非零环绕数原则和奇偶原则/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">非零环绕数原则和奇偶原则</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="用Hexo快速搭建个人博客（引）" data-title="用Hexo快速搭建搭建个人博客(引)" data-url="http://lanceng.com/2015/04/29/用Hexo快速搭建个人博客（引）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Smile Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/lanceng/hexo-theme-yilia" target="_blank">Yilia</a> by Lanceng
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/totop.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>
+</html>

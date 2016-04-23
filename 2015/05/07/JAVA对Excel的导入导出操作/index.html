@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>JAVA对Excel的导入导出操作 | Lanceng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在JAVA中对Excel的操作有以下几种方式：POI方式、JXL方式、FastExcel方式。在JAVA中对pdf的操作，比较流行的是用iText方式操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA对Excel的导入导出操作">
+<meta property="og:url" content="http://lanceng.com/2015/05/07/JAVA对Excel的导入导出操作/index.html">
+<meta property="og:site_name" content="Lanceng's Blog">
+<meta property="og:description" content="在JAVA中对Excel的操作有以下几种方式：POI方式、JXL方式、FastExcel方式。在JAVA中对pdf的操作，比较流行的是用iText方式操作。">
+<meta property="og:updated_time" content="2015-05-07T15:39:03.450Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA对Excel的导入导出操作">
+<meta name="twitter:description" content="在JAVA中对Excel的操作有以下几种方式：POI方式、JXL方式、FastExcel方式。在JAVA中对pdf的操作，比较流行的是用iText方式操作。">
+  
+    <link rel="alternative" href="/atom.xml" title="Lanceng&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/author.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Smile Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/ORACLE/" style="font-size: 10px;">ORACLE</a> <a href="/tags/canvas画布/" style="font-size: 10px;">canvas画布</a> <a href="/tags/excel操作/" style="font-size: 10px;">excel操作</a> <a href="/tags/mongodb数据-nodejs/" style="font-size: 10px;">mongodb数据 nodejs</a> <a href="/tags/node-js开发/" style="font-size: 10px;">node.js开发</a> <a href="/tags/svg-api/" style="font-size: 10px;">svg api</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/博客编写工具/" style="font-size: 10px;">博客编写工具</a> <a href="/tags/图形判断/" style="font-size: 10px;">图形判断</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/直销系统基金知识/" style="font-size: 10px;">直销系统基金知识</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Smile Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/author.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Smile Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-JAVA对Excel的导入导出操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/07/JAVA对Excel的导入导出操作/" class="article-date">
+  	<time datetime="2015-05-07T15:18:02.000Z" itemprop="datePublished">2015-05-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA对Excel的导入导出操作
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/excel操作/">excel操作</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/JAVA/">JAVA</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在JAVA中对Excel的操作有以下几种方式：POI方式、JXL方式、FastExcel方式。在JAVA中对pdf的操作，比较流行的是用iText方式操作。<br><a id="more"></a>       </p>
+<h3 id="一、Exce解析的几种方式"><a href="#一、Exce解析的几种方式" class="headerlink" title="一、Exce解析的几种方式"></a>一、Exce解析的几种方式</h3><p>1、POI方式         </p>
+<p>HSSF是Horrible SpreadSheet Format缩写，中文：“讨厌的电子表格式”。通过HSSF，可以用纯粹的JAVA代码来实现对Excel文件的读取、写入、 修改操作。            </p>
+<p>HSSF - 读写Microsoft Excel格式文档的功能<br>XSSF - 读写Microsoft Excel OOXML格式文档的功能<br>HWPF - 读写Microsoft word格式文档的功能<br>HSLF - 读写Microsoft PowerPint格式文档的功能<br>HDGF - 读写Microsoft Visio格式文档的功能           </p>
+<p>2、JXL方式           </p>
+<p>JAVA Excel是一个开源项目，可以读取Excel文件的内容、创建新的Excel文件、更新已经存在Excel文件。           </p>
+<p>包括常见的格式设置：字体、颜色、背景、合并单元格等。        </p>
+<p>3、FASTEXCEL方式           </p>
+<p>FastExcel是一种采用纯JAVA开发的excel读写组件，支持excel 97-2003格式文件。<br>FastExcel只能读取单元格的文字信息，而其他属性，如颜色、字体就不能够支持了，因此FastExcel所需的内存很小。           </p>
+<p>4、iText          </p>
+<p>通过iText不仅可以生成PDF或rtf文件，还可以将XML、HTML格式文件转换成PDF文件。        </p>
+<p>下载iText.jar文件后，只要在系统的CLASSPATH中加入iText.jar的路径，就可以在程序中使用iText库类了。      </p>
+<h3 id="二、JXL详解"><a href="#二、JXL详解" class="headerlink" title="二、JXL详解"></a>二、JXL详解</h3><p>使用JXL进行Excel的创建和读取需要用到jxl.jar包，下载将此包导入即可。<br>API地址：<a href="http://www.andykhan.com/jexcelapi/tutorial.html" target="_blank" rel="external">http://www.andykhan.com/jexcelapi/tutorial.html</a>       </p>
+<p>1、创建一个工作簿       </p>
+<pre><code>WritableWorkbook wwb = Workbook.createWorkbook(os);      
+</code></pre><p>其中os为一个文件输出流。当然还有很多其他的入参，比如File等。      </p>
+<p>2、读取现有的工作薄       </p>
+<pre><code>Workbook.getWorkbook(java.io.File file);      
+</code></pre><p>3、创建工作表Sheet       </p>
+<pre><code>WritableSheet sheet = wwb.createSheet(&quot;职员表&quot;, 0);      
+</code></pre><p>4、创建标签Label     </p>
+<pre><code>Label label = new Label(col, row, title);       
+</code></pre><p>将标签加入到工作表中：     </p>
+<pre><code>sheet.addCell(label);        
+</code></pre><p>5、填充数据      </p>
+<pre><code>jxl.write.Number numb = new jxl.write.Number(1, 1, 250); 
+sheet.addCell(numb);       
+</code></pre><p>格式化数字        </p>
+<pre><code>jxl.write.NumberFormat nf = new jxl.write.NumberFormat(&quot;#.##&quot;); 
+jxl.write.WritableCellFormat wcf = new jxl.write.WritableCellFormat(nf); 
+jxl.write.Number n = new jxl.write.Number(2, 1, 2.451, wcf); 
+sheet.addCell(n);         
+</code></pre><p>填充日期      </p>
+<pre><code>SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd hh:mm:ss&quot;); 
+String newdate = sdf.format(new Date()); 
+label = new Label(2, 2, newdate); 
+sheet.addCell(label);      
+</code></pre><p>填充文本     </p>
+<pre><code>label = new Label(3, 3, &quot;周星驰&quot;); 
+sheet.addCell(label);       
+</code></pre><p>填充boolean值      </p>
+<pre><code>jxl.write.Boolean bool = new jxl.write.Boolean(4, 1, true); 
+sheet.addCell(bool);      
+</code></pre><p>6、合并单元格       </p>
+<p>通过writablesheet.mergeCells(int x,int y,int m,int n);来实现的。表示将从第x+1列，y+1行到m+1列，n+1行合并 (四个点定义了两个坐标，左上角和右下角)，结果是合并了m-x+1行，n-y+1列，两者乘积就是合并的单元格数量。        </p>
+<pre><code>sheet.mergeCells(0, 6, 3, 8); 
+ label = new Label(0, 6, &quot;合并了12个单元格&quot;); 
+sheet.addCell(label);        
+</code></pre><p>7、添加单元格样式      </p>
+<p>主要是设置单元格的背景、字体、样式等       </p>
+<pre><code>WritableCellFormat wc = new WritableCellFormat(); 
+// 设置居中 
+wc.setAlignment(Alignment.CENTRE); 
+// 设置边框线 
+wc.setBorder(Border.ALL, BorderLineStyle.THIN); 
+// 设置单元格的背景颜色 
+wc.setBackground(jxl.format.Colour.RED); 
+label = new Label(1, 5, &quot;字体&quot;, wc); 
+sheet.addCell(label);        
+</code></pre><p>8、设置单元格字体       </p>
+<pre><code>// 设置字体 
+jxl.write.WritableFont wfont = new jxl.write.WritableFont(WritableFont.createFont(&quot;楷书&quot;), 20); 
+WritableCellFormat font = new WritableCellFormat(wfont); 
+label = new Label(2, 6, &quot;楷书&quot;, font); 
+sheet.addCell(label);      
+</code></pre><p>9、将工作簿写成文件       </p>
+<pre><code>// 写入数据 
+wwb.write(); 
+// 关闭文件 
+wwb.close();       
+</code></pre><p>10、对行列的批量操作        </p>
+<pre><code>//获取所有的工作表 
+jxl.write.WritableSheet[] sheetList = wwb.getSheets(); 
+//获取第1列所有的单元格 
+jxl.Cell[] cellc = sheet.getColumn(0); 
+//获取第1行所有的单元格 
+jxl.Cell[] cellr = sheet.getRow(0); 
+//获取第1行第1列的单元格 
+Cell c = sheet.getCell(0, 0);         
+</code></pre><p>11、获取单元格的值       </p>
+<pre><code>//获取单元格的值，不管什么单元格，返回都是字符串 
+String value = c.getContents();        
+</code></pre><h3 id="三、POI方式详解"><a href="#三、POI方式详解" class="headerlink" title="三、POI方式详解"></a>三、POI方式详解</h3><p>首先，上apache poi官方文档连接：<a href="http://poi.apache.org/spreadsheet/quick-guide.html" target="_blank" rel="external">http://poi.apache.org/spreadsheet/quick-guide.html</a>      </p>
+<p>1、读取excel文件      </p>
+<pre><code>BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filePath));
+POIFileSystem fs = new POIFileSystem(bis);
+HSSFWorkbook sampleWorkbook = new HSSFWorkbook(fs);
+HSSFSheet sampleSheet = sampleWorkbook.getSheet(0);//获取第一个工作簿       
+</code></pre><p>2、创建一个工作簿        </p>
+<pre><code>HSSFWorkbook book = new HSSFWorkbook();
+HSSFSheet sheet = book.createSheet(fileName);
+sheet.setDisplayGridlines(false);//这里是设置excel文件是否显示默认的网格线，为true时是默认值显示，false时是不显示。       
+</code></pre><p>3、创建行、列、设置行宽、列宽       </p>
+<pre><code>sheet.setColumnWidth(0, 5000);//这里是设置第一列的列宽为5000
+HSSFRow sampleRow = sampleSheet.getRow(0);//获取模板文件的第一行
+HSSFRow row = sheet.createRow(0);//创建第一行
+HSSFCell sampleCell = sampleRow.getCell(0);//获取模板文件第一行第一列
+HSSFCell cell = row.createCell(0);//创建第一行第一列
+
+row.setHeight(5000);//设置第一行行宽
+sheet.addMergedRegion(newCellRangeAddress(firstc, firstr, lastc, lastr));//合并n行n列
+
+int startNum = sampleRow.getFirstCellNum();//获取模板行的开始列索引
+int endNum = sampleRow.getLastCellNum();//获取模板行的结束列索引        
+</code></pre><p>4、样式设置       </p>
+<pre><code>HSSFCellStyle style = book.createCellStyle();//创建一个单元样式
+
+HSSFFont foot = book.createFont();//创建一个字体样式
+font.setFontName(&quot;宋体&quot;);
+font.setFontHeightInPoints((short)24);
+
+style.setFont(font);
+style.setAlignMent(HSSFCellStyle.ALIGN_RIGHT);//文本位置
+style.setFillBackgroundColor(HSSFColor.GRY_25_PERCENT.index);//背景色设置
+style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);//前景色设置
+style.setFillPattern(HSSFCellStyle.FINE_DOTS);//填充色
+style.setBorderLeft((short)1);//左边框大小
+style.setBorderRight((short)1);//右边框大小
+style.setBorderBottom(HSSFCellStyle.BORDER_THIN);//边框为粗体
+style.setBottomBorderColor(HSSFColor.BLACK.index);//边框颜色
+
+style.cloneStyleFrom(sampleCell.getCellStyle());//复制样式
+
+cell.setCellStyle(style);//设置单元格样式        
+</code></pre><p>5、导出excel文件       </p>
+<pre><code>private void organizeResponse(HttpServletResponse response, HSSFWorkbook workbook, String begindate, String enddate){
+OutputStream out = null;
+try{
+    out = response.getOutputStream();
+    response.reset();
+    String filename = java.net.URLEncoder.encode(&quot;基金销售机构交易数据报送表_&quot;+enddate+&quot;.xls&quot;, &quot;UTF-8&quot;);
+    response.addHeader(&quot;Content-Disposition&quot;, &quot;attachment; filename=&quot; + filename);
+    response.addHeader(&quot;charset&quot;, &quot;ISO8859-1&quot;);
+    response.setContentType(&quot;application/octet-stream&quot;);
+    workbook.write(out);
+    out.flush();
+}catch (Exception e){
+    e.printStackTrace();
+}finally {
+    try{
+        if(out != null)out.close();
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+}
+}      
+</code></pre><h3 id="四、FastExcel方式"><a href="#四、FastExcel方式" class="headerlink" title="四、FastExcel方式"></a>四、FastExcel方式</h3><p>API地址：<a href="http://fastexcel.sourceforge.net/#how-it-works" target="_blank" rel="external">http://fastexcel.sourceforge.net/#how-it-works</a>      </p>
+<p>创建文件      </p>
+<pre><code>Workbook workBook = FastExcel.createReadable(new File(&quot;test.xls));
+workBook.open();
+Sheet sheet = workBook.addSheet(&quot;sheetA&quot;);
+sheet.setCell(1,2,&quot;some string&quot;);
+workBook.close();
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/23/Sublime快捷使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Sublime快捷使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/29/用Hexo快速搭建个人博客（引）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用Hexo快速搭建搭建个人博客(引)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="JAVA对Excel的导入导出操作" data-title="JAVA对Excel的导入导出操作" data-url="http://lanceng.com/2015/05/07/JAVA对Excel的导入导出操作/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Smile Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/lanceng/hexo-theme-yilia" target="_blank">Yilia</a> by Lanceng
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/totop.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>HTML5-SVG的API | Lanceng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="图形的两个概念：栅格图形和矢量图形。在栅格图形中，图像是有一组二维像素网格表示。HTML5的Canvas 2d API就是一款栅格图形API。通过Canvas API绘制图形，其实就是更新canvas的像素。PNG和JPEG是两种栅格图形的格式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5-SVG的API">
+<meta property="og:url" content="http://lanceng.com/2015/02/07/HTML5-SVG的API/index.html">
+<meta property="og:site_name" content="Lanceng's Blog">
+<meta property="og:description" content="图形的两个概念：栅格图形和矢量图形。在栅格图形中，图像是有一组二维像素网格表示。HTML5的Canvas 2d API就是一款栅格图形API。通过Canvas API绘制图形，其实就是更新canvas的像素。PNG和JPEG是两种栅格图形的格式。">
+<meta property="og:updated_time" content="2015-02-07T07:58:28.893Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5-SVG的API">
+<meta name="twitter:description" content="图形的两个概念：栅格图形和矢量图形。在栅格图形中，图像是有一组二维像素网格表示。HTML5的Canvas 2d API就是一款栅格图形API。通过Canvas API绘制图形，其实就是更新canvas的像素。PNG和JPEG是两种栅格图形的格式。">
+  
+    <link rel="alternative" href="/atom.xml" title="Lanceng&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/author.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Smile Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/ORACLE/" style="font-size: 10px;">ORACLE</a> <a href="/tags/canvas画布/" style="font-size: 10px;">canvas画布</a> <a href="/tags/excel操作/" style="font-size: 10px;">excel操作</a> <a href="/tags/mongodb数据-nodejs/" style="font-size: 10px;">mongodb数据 nodejs</a> <a href="/tags/node-js开发/" style="font-size: 10px;">node.js开发</a> <a href="/tags/svg-api/" style="font-size: 10px;">svg api</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/博客编写工具/" style="font-size: 10px;">博客编写工具</a> <a href="/tags/图形判断/" style="font-size: 10px;">图形判断</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/直销系统基金知识/" style="font-size: 10px;">直销系统基金知识</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Smile Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/author.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Smile Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-HTML5-SVG的API" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/07/HTML5-SVG的API/" class="article-date">
+  	<time datetime="2015-02-07T04:08:31.000Z" itemprop="datePublished">2015-02-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5-SVG的API
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svg-api/">svg api</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/HTML5/">HTML5</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>图形的两个概念：栅格图形和矢量图形。在栅格图形中，图像是有一组二维像素网格表示。HTML5的Canvas 2d API就是一款栅格图形API。通过Canvas API绘制图形，其实就是更新canvas的像素。PNG和JPEG是两种栅格图形的格式。<br><a id="more"></a><br>矢量图形则大相径庭。在矢量图形中，图像是有数学描述的几何形状表示。矢量图像包括使用高级几何图形（比如线和形状）绘制图像所需的全部信息。顾名思义，SVG就是矢量图形的一种。同HTML一样，SVG是一种格式，有自己的API。SVG同DOM API结合形成了一种矢量图形的API。尽管可以将PNG等栅格图形嵌入到SVG中，但从根本上讲，SVG是一种矢量格式。    </p>
+<h2 id="SVG的创建"><a href="#SVG的创建" class="headerlink" title="SVG的创建"></a>SVG的创建</h2><pre><code>&lt;svg height=&quot;100&quot; height=&quot;100&quot;&gt;
+    &lt;circle x=&quot;50&quot; y=&quot;50&quot; r=&quot;50&quot; /&gt;
+&lt;/svg&gt;    
+</code></pre><h2 id="SVG的缩放"><a href="#SVG的缩放" class="headerlink" title="SVG的缩放"></a>SVG的缩放</h2><p>缩放SVG图像不会导致其质量下降。SVG文档在呈现的时候会保留构成它的矢量信息。这与像素图形不同，放大canvas和图像这样的像素图形后，图像会变得模糊。其原因在于图像是由像素组成，且只能在更高分辨率下重新采样。基础信息–构成图像的路径和图形–在图像完成绘制后便丢失了。    </p>
+<h2 id="变换SVG元素"><a href="#变换SVG元素" class="headerlink" title="变换SVG元素"></a>变换SVG元素</h2><p>SVG中有些组织元素，可以将多个元素结合起来，<g>标签就是其中一个，代表“组”（group）。组内成员可通过ID来引用。此外，还可以将组作为一个整体进行变换。<br>    <svg width="200" height="200"><br/>        <g transform="tranlate(60, 0) rotate(30) scale(0.5)" id="ShapeGroup"><br/>            <rect x="10" y="10" width="100" height="80" stroke="red" fill="#ccc"/><br/>            <circle cx="120" cy="80" r="40" stroke="blue" fill="yellow" stroke-width="3"/><br/>        </g><br/>    </svg>     </g></p>
+<h2 id="SVG元素的复用"><a href="#SVG元素的复用" class="headerlink" title="SVG元素的复用"></a>SVG元素的复用</h2><p>在SVG中，可以使用<defs>标签来定义留待将来使用的内容。然后在SVG中使用<usr>标签来连接到吃<defs>元素定义的内容。</defs></usr></defs></p>
+<pre><code>&lt;svg width=&quot;200&quot; height=&quot;200&quot;&gt;
+    &lt;defs&gt;
+        &lt;g id=&quot;ShapeGroup&quot;&gt;
+            &lt;rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;100&quot; height=&quot;80&quot; stroke=&quot;red&quot; fill=&quot;#ccc&quot;/&gt;
+            &lt;circle cx=&quot;120&quot; cy=&quot;80&quot; r=&quot;40&quot; stroke=&quot;blue&quot; fill=&quot;yellow&quot; stroke-width=&quot;3&quot;/&gt;
+        &lt;/g&gt;
+    &lt;/defs&gt;
+
+    &lt;use xlink:href=&quot;#ShapeGroup&quot; transform=&quot;translate(60, 0) scale(0.5)&quot; /&gt;
+    &lt;use xlink:href=&quot;#ShapeGroup&quot; transform=&quot;translate(120, 60) scale(0.4)&quot; /&gt;
+    &lt;use xlink:href=&quot;#ShapeGoup&quot; transform=&quot;translate(200, 120) scale(0.25)&quot; /&gt;
+&lt;/svg&gt;      
+</code></pre><h2 id="SVG的图案背景及渐变"><a href="#SVG的图案背景及渐变" class="headerlink" title="SVG的图案背景及渐变"></a>SVG的图案背景及渐变</h2><p>图案引用及渐变事例：    </p>
+<pre><code>&lt;svg width=&quot;200&quot; height=&quot;200&quot;&gt;
+    &lt;defs&gt;
+        &lt;pattern id=&quot;GravelPattern&quot; patternUnits=&quot;userSpaceOnUse&quot; x=&quot;0&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;67&quot; viewBox=&quot;0 0 100 67&quot;&gt;
+            &lt;image x=&quot;0&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;67&quot; xlink:href=&quot;test.jpg&quot;&gt;&lt;/image&gt;
+        &lt;/pattern&gt;
+        &lt;linearGradient id=&quot;RedBlackGradient&quot;&gt;
+            &lt;stop offset=&quot;0%&quot; stop-color=&quot;#000&quot;&gt;&lt;/stop&gt;
+            &lt;stop offset=&quot;100%&quot; stop-color=&quot;#f00&quot;&gt;&lt;/stop&gt;
+        &lt;/linearGradient&gt;
+    &lt;/defs&gt;
+
+    &lt;rect x=&quot;10&quot; y=&quot;20&quot; width=&quot;100&quot; height=&quot;80&quot; stroke=&quot;red&quot; fill=&quot;url(#RedBlackGradient)&quot; stroke-width=&quot;5&quot; /&gt;
+    &lt;circle cx=&quot;120&quot; cy=&quot;80&quot; r=&quot;40&quot; stroke=&quot;#00f&quot; fill=&quot;url(#GravelPattern)&quot; stroke-width=&quot;8&quot; /&gt;
+&lt;/svg&gt;       
+</code></pre><h2 id="SVG路径"><a href="#SVG路径" class="headerlink" title="SVG路径"></a>SVG路径</h2><p>SVG不仅包含简单的图形，还包含自由形态的路径。path元素又一个d属性，d代表数据（data）。在d属性的值中，你能够制定一系列的路径绘制命令。每条命令都可能带有坐标参数。一些命令的含义为：M代表移至（moveTo），L代表划线至（lineTo），Q代表二次曲线，Z代表封闭合路径。如果你能想起canvas API，并非巧合。一个简单例子：    </p>
+<pre><code>&lt;path d=&quot;M-25, -50 L-10, -80 L-20, -80 L-5, -110 L-15, -110 L0, =140 L15, -110 L5, -110 L20, -80 L10, -80 L25, -50 Z&quot; id=&quot;Canopy&quot;&gt;&lt;/path&gt;      
+</code></pre><h2 id="SVG文本"><a href="#SVG文本" class="headerlink" title="SVG文本"></a>SVG文本</h2><p>SVG也支持文本，在浏览器中，文本是可选择的。如果选用SVG文本，浏览器和搜索引擎能够支持用户搜索SVG text元素中的文本。这对可用性和可访问性有很大的益处。<br>SVG文本的属性类似于HTML里的CSS样式规则。包括一些font font-size font-family font-weight等等属性。     </p>
+<pre><code>&lt;text x=&quot;10&quot; y=&quot;50&quot; font-size=&quot;40px&quot; font-family=&quot;微软雅黑&quot; font-weight=&quot;bold&quot; fill=&quot;#0ff&quot;&gt;
+    Happy Trails!
+&lt;/text&gt;     
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/20/非零环绕数原则和奇偶原则/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          非零环绕数原则和奇偶原则
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/06/基金业务知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基金业务知识</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="HTML5-SVG的API" data-title="HTML5-SVG的API" data-url="http://lanceng.com/2015/02/07/HTML5-SVG的API/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Smile Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/lanceng/hexo-theme-yilia" target="_blank">Yilia</a> by Lanceng
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/totop.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>
+</html>
