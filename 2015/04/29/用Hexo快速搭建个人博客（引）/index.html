@@ -14,16 +14,16 @@
 <meta property="og:site_name" content="Lanceng's Blog">
 <meta property="og:description" content="什么是Hexohexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。      
 类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在github上。">
-<meta property="og:image" content="https://lanceng.github.io/image/soon.jpg">
-<meta property="og:image" content="https://lanceng.github.io/image/dnspod.png">
-<meta property="og:image" content="https://lanceng.github.io/image/ww1.png">
-<meta property="og:image" content="https://lanceng.github.io/image/ww.png">
-<meta property="og:updated_time" content="2015-04-30T16:37:25.756Z">
+<meta property="og:image" content="https://lanceng.github.io/image/hexo-blog/soon.jpg">
+<meta property="og:image" content="https://lanceng.github.io/image/hexo-blog/dnspod.png">
+<meta property="og:image" content="https://lanceng.github.io/image/hexo-blog/ww1.png">
+<meta property="og:image" content="https://lanceng.github.io/image/hexo-blog/ww.png">
+<meta property="og:updated_time" content="2016-05-22T03:19:17.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Hexo快速搭建搭建个人博客(引)">
 <meta name="twitter:description" content="什么是Hexohexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。      
 类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在github上。">
-<meta name="twitter:image" content="https://lanceng.github.io/image/soon.jpg">
+<meta name="twitter:image" content="https://lanceng.github.io/image/hexo-blog/soon.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lanceng&#39;s Blog" type="application/atom+xml">
   
@@ -448,8 +448,8 @@ tags: [博客，文章] #文章标签，多于一项时用这种格式
 <pre><code>menu:
   关于: /about          
 </code></pre><h3 id="主页文章显示摘要"><a href="#主页文章显示摘要" class="headerlink" title="主页文章显示摘要"></a>主页文章显示摘要</h3><p>编辑md文件的时候，在要作为摘要的文字后面添加即可。<br>优化是无止境的，今天先写这些。          </p>
-<h3 id="速度优化"><a href="#速度优化" class="headerlink" title="速度优化"></a>速度优化</h3><p>由于 Google 被大陆屏蔽，Github 从大陆访问也比较慢，且不太稳定。所以一方面可以把 Blog 迁移到国内，比如我现在使用的Gitcafe提供的免费 Page 服务，又快又好用，赞一个，可以参考Zippera写的<a href="http://zipperary.com/2013/11/23/hexo-to-gitcafe/" target="_blank" rel="external">《托管博客到gitcafe》</a> 。另一方面，建议把 google 提供的 jquery 和 fonts api 全换掉。由于不同的主题其位置不同，最好是搜索一下。<br>Unix/Linux 用户在 shell 中切换到自己的主题目录下面；Windows 用户用 Git Bash 切换到主题目录下面。然后用grep ‘jquery’ -r ./搜索使用 jquery 的位置，如果是用的 google 的，则替换成国内的，我用的是百度，//libs.baidu.com/jquery/2.0.3/jquery.min.js， //libs.baidu.com/jquery/1.8.0/jquery.min.js，替换后如图（我的是 light 主题）：        </p>
-<p><img src="https://lanceng.github.io/image/soon.jpg" alt="Alt text">        </p>
+<h3 id="速度优化"><a href="#速度优化" class="headerlink" title="速度优化"></a>速度优化</h3><p>由于 Google 被大陆屏蔽，Github 从大陆访问也比较慢，且不太稳定。所以一方面可以把 Blog 迁移到国内，比如我现在使用的Gitcafe提供的免费 Page 服务，又快又好用，赞一个，可以参考Zippera写的<a href="http://zipperary.com/2013/11/23/hexo-to-github/" target="_blank" rel="external">《托管博客到github》</a> 。另一方面，建议把 google 提供的 jquery 和 fonts api 全换掉。由于不同的主题其位置不同，最好是搜索一下。<br>Unix/Linux 用户在 shell 中切换到自己的主题目录下面；Windows 用户用 Git Bash 切换到主题目录下面。然后用grep ‘jquery’ -r ./搜索使用 jquery 的位置，如果是用的 google 的，则替换成国内的，我用的是百度，//libs.baidu.com/jquery/2.0.3/jquery.min.js， //libs.baidu.com/jquery/1.8.0/jquery.min.js，替换后如图（我的是 light 主题）：        </p>
+<p><img src="https://lanceng.github.io/image/hexo-blog/soon.jpg" alt="Alt text">        </p>
 <p>然后替换google fonts，同样的方法，grep ‘fonts’ -r ./，找到后替换为//fonts.useso.com/css?family=Lato:400,400italic即可。<br>以上只是针对我的版本我的主题，读者根据自己的情况适当调整吧，比如 jquery 的版本号，你现在的是哪个版本就用 baidu 的哪个版本。把地址输入浏览器地址栏看能正确打开嘛，如果可以，说明是可用的。          </p>
 <h3 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h3><p>hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：<br>1.安装RSS插件到本地：npm install hexo-generator-feed<br>2.开启RSS功能：编辑hexo/_config.yml，添加如下代码：         </p>
 <pre><code>plugins:
@@ -468,14 +468,14 @@ tags: [博客，文章] #文章标签，多于一项时用这种格式
 <p>方法一：在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如cnfeat.com。<br>方法二：到我的github仓库，点击右下角的「Download ZIP」，下载源文件，解压，找到CNAME文件，用记事本打开，将cnfeat.com修改成你的域名，放进Hexo\source目录下，用hexo命令提交上去。       </p>
 <pre><code>lcsmile.cn      
 </code></pre><p>用DNSpod，快，免费，稳定。<br>注册DNSpod，添加域名，如下图设置。      </p>
-<p><img src="https://lanceng.github.io/image/dnspod.png" alt="Alt text">       </p>
+<p><img src="https://lanceng.github.io/image/hexo-blog/dnspod.png" alt="Alt text">       </p>
 <p>其中A的两条记录指向的ip地址是github Pages的提供的ip<br>192.30.252.153<br>192.30.252.154       </p>
 <p>如博客不能登录，有可能是github更改了空间服务的ip地址，记得及时到在GitHub Pages查看最新的ip即可<br>www指定的记录是你在github注册的仓库。      </p>
 <p>更改godaddy的Nameservers为DNSpod的NameServers。                 </p>
 <p>1.点击「My Account」，管理我的域名。      </p>
-<p><img src="https://lanceng.github.io/image/ww1.png" alt="Alt text">        </p>
+<p><img src="https://lanceng.github.io/image/hexo-blog/ww1.png" alt="Alt text">        </p>
 <p>2.修改DNS服务商     </p>
-<p><img src="https://lanceng.github.io/image/ww.png" alt="Alt text">      </p>
+<p><img src="https://lanceng.github.io/image/hexo-blog/ww.png" alt="Alt text">      </p>
 <p>然后就可以根据<a href="http://lcsmile.cn" target="_blank" rel="external">lcsmile.cn</a>访问自己的博客了。      </p>
 <p>Okay到此为此，一个自己的博客就搭建完成      </p>
 <h2 id="文章出处"><a href="#文章出处" class="headerlink" title="文章出处"></a>文章出处</h2><p>Zippera’s blos:[1]:<a href="http://zipperary.com" target="_blank" rel="external">http://zipperary.com</a></p>
