@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://lanceng.com/2016/08/04/Spring+Mybatis+Mysql整合框架/index.html">
 <meta property="og:site_name" content="Lanceng's Blog">
 <meta property="og:description" content="在现代的大型应用中，都要求有高并发、高可用性等的要求，而这些需求我们在WEB系统中常常借助于框架来帮助我们达到我们的要求。本文介绍的是博主真是工作中使用的框架整合，也就是Spring+Mybatis+Oracle的整合使用。">
-<meta property="og:updated_time" content="2016-08-04T13:25:44.805Z">
+<meta property="og:updated_time" content="2016-08-05T13:38:23.835Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring+Mybatis+Mysql整合框架">
 <meta name="twitter:description" content="在现代的大型应用中，都要求有高并发、高可用性等的要求，而这些需求我们在WEB系统中常常借助于框架来帮助我们达到我们的要求。本文介绍的是博主真是工作中使用的框架整合，也就是Spring+Mybatis+Oracle的整合使用。">
@@ -71,7 +71,7 @@
 						<li>Tags</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -110,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/ORACLE/" style="font-size: 10px;">ORACLE</a> <a href="/tags/Spring、Mybatis、Oracle/" style="font-size: 10px;">Spring、Mybatis、Oracle</a> <a href="/tags/canvas画布/" style="font-size: 10px;">canvas画布</a> <a href="/tags/excel操作/" style="font-size: 10px;">excel操作</a> <a href="/tags/mongodb数据-nodejs/" style="font-size: 10px;">mongodb数据 nodejs</a> <a href="/tags/node-js开发/" style="font-size: 10px;">node.js开发</a> <a href="/tags/svg-api/" style="font-size: 10px;">svg api</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/博客编写工具/" style="font-size: 10px;">博客编写工具</a> <a href="/tags/图形判断/" style="font-size: 10px;">图形判断</a> <a href="/tags/基金、通讯机系统/" style="font-size: 10px;">基金、通讯机系统</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/直销系统基金知识/" style="font-size: 10px;">直销系统基金知识</a>
+						<a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Juicer/" style="font-size: 10px;">Juicer</a> <a href="/tags/ORACLE/" style="font-size: 10px;">ORACLE</a> <a href="/tags/Spring、Mybatis、Oracle/" style="font-size: 10px;">Spring、Mybatis、Oracle</a> <a href="/tags/canvas画布/" style="font-size: 10px;">canvas画布</a> <a href="/tags/excel操作/" style="font-size: 10px;">excel操作</a> <a href="/tags/mongodb数据-nodejs/" style="font-size: 10px;">mongodb数据 nodejs</a> <a href="/tags/node-js开发/" style="font-size: 10px;">node.js开发</a> <a href="/tags/svg-api/" style="font-size: 10px;">svg api</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/博客编写工具/" style="font-size: 10px;">博客编写工具</a> <a href="/tags/图形判断/" style="font-size: 10px;">图形判断</a> <a href="/tags/基金、通讯机系统/" style="font-size: 10px;">基金、通讯机系统</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/直销系统基金知识/" style="font-size: 10px;">直销系统基金知识</a>
 					</div>
 				</section>
 				
@@ -244,12 +244,12 @@
 </ul>
 </blockquote>
 <h3 id="使用Spring-IOC注入方式及使用场景"><a href="#使用Spring-IOC注入方式及使用场景" class="headerlink" title="使用Spring IOC注入方式及使用场景"></a>使用Spring IOC注入方式及使用场景</h3><p>1、使用XML配置文件注入         </p>
-<p>使用XML配置文件注入，一般是需要引用第三方类库，比如dataSource等等。或者需要使用命名空间，比如AOP、Context、mvc等等。      </p>
+<p>使用XML配置文件注入，一般是需要引用第三方类库，比如dataSource等等。或者需要使用命名空间，比如AOP、Context、MVC等等。      </p>
 <p>2、使用Spring注解方式注入       </p>
 <p>使用Spring注解方式十分方便，我们可以直接在对象声明处，使用Spring的相关注解，直接把Bean注入到变量中。一般如果引用的是项目本身开发的类库，可以使用注解方式注入，简单方便，注解例举，比如: @Service、@Controller等等。       </p>
 <p>3、使用JAVA类的方式注入        </p>
 <p>这种情形一般是需要使用代码逻辑来控制对象的创建，比如需要自定义修改库类等等。     </p>
-<h3 id="使用Spring管理事物方式介绍"><a href="#使用Spring管理事物方式介绍" class="headerlink" title="使用Spring管理事物方式介绍"></a>使用Spring管理事物方式介绍</h3><pre><code>1、使用FroxyFactoryBean+XML方式为早期Spring使用的事物管理方式。    
+<h3 id="使用Spring管理事物方式介绍"><a href="#使用Spring管理事物方式介绍" class="headerlink" title="使用Spring管理事物方式介绍"></a>使用Spring管理事物方式介绍</h3><pre><code>1、使用ProxyFactoryBean+XML方式为早期Spring使用的事物管理方式。    
 2、使用tx:advice+aop命名空间，一次配置永久有效，这种方式就方便了后面开发中使用。       
 3、使用@Tranactional注解方式，在需要使用事物管理的地方定义事物管理方法。      
 </code></pre><h3 id="Spring整合Mybatis实例"><a href="#Spring整合Mybatis实例" class="headerlink" title="Spring整合Mybatis实例"></a>Spring整合Mybatis实例</h3><p>1、Spring配置文件Spring.xml     </p>
