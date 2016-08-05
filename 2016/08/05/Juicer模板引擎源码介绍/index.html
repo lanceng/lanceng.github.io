@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://lanceng.com/2016/08/05/Juicer模板引擎源码介绍/index.html">
 <meta property="og:site_name" content="Lanceng's Blog">
 <meta property="og:description" content="Juicer是一款强大的、高校的前端页面模板引擎。它可以是页面元素与数据相分离。同时是一款开源代码的前端模板引擎，代码托管在Github上。">
-<meta property="og:updated_time" content="2016-08-05T13:39:53.512Z">
+<meta property="og:updated_time" content="2016-08-05T15:21:08.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Juicer模板引擎源码介绍">
 <meta name="twitter:description" content="Juicer是一款强大的、高校的前端页面模板引擎。它可以是页面元素与数据相分离。同时是一款开源代码的前端模板引擎，代码托管在Github上。">
@@ -217,8 +217,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <div id="toc" class="toc-article">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Juicer源代码解析"><span class="toc-text">Juicer源代码解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#escapehtml对象"><span class="toc-text">_escapehtml对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#throw-异常打印"><span class="toc-text">_throw()异常打印</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#creator-内部创建对象方法"><span class="toc-text">_creator()内部创建对象方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#annotate-fn-获取方法的注解形式"><span class="toc-text">annotate(fn)获取方法的注解形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Juicer定义一些版本和初始化的东西"><span class="toc-text">Juicer定义一些版本和初始化的东西</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#juicer-set-conf-value-设置配置属性值"><span class="toc-text">juicer.set(conf, value)设置配置属性值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#juicer-register-fname-fn-对象方法注册"><span class="toc-text">juicer.register(fname, fn)对象方法注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#juicer-unregister-fname-注销对象绑定方法"><span class="toc-text">juicer.unregister(fname)注销对象绑定方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#juicer-template-options-根据选项参数生成模板并返回模板对象"><span class="toc-text">juicer.template(options)根据选项参数生成模板并返回模板对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#juicer-compile-tp1-options-根据模板对象及参数，编译模板但不渲染"><span class="toc-text">juicer.compile(tp1, options)根据模板对象及参数，编译模板但不渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#juicer-to-html-tp1-data-options-将模板和对应数据生成HTML代码并返回"><span class="toc-text">juicer.to_html(tp1, data, options)将模板和对应数据生成HTML代码并返回</span></a></li></ol></li></ol>
+</div>
+---------------------------------------------------------------------------------------------
+      
         <p>Juicer是一款强大的、高校的前端页面模板引擎。它可以是页面元素与数据相分离。同时是一款开源代码的前端模板引擎，代码托管在<a href="https://github.com/PaulGuo/Juicer" target="_blank" rel="external">Github</a>上。<br><a id="more"></a><br>Juicer的详细使用及其API使用可以参考<a href="http://juicer.name/docs/docs_zh_cn.html" target="_blank" rel="external">Juicer的官方中文网站</a>，里面有Juicer详细的介绍和函数的使用，都是有中文翻译的，十分容易理解。        </p>
-<h3 id="Juicer源代码解析"><a href="#Juicer源代码解析" class="headerlink" title="Juicer源代码解析"></a>Juicer源代码解析</h3><p>1、_escapehtml对象<br>_escapehtml对象是Juicer定义的内部对象，里面包括了&lt;、&gt;、&amp;、”、’、/等特殊字符对应HTML中的表示符，及标识符替换方法、转换方法、数据检测方法。</p>
+<h3 id="Juicer源代码解析"><a href="#Juicer源代码解析" class="headerlink" title="Juicer源代码解析"></a>Juicer源代码解析</h3><h4 id="escapehtml对象"><a href="#escapehtml对象" class="headerlink" title="_escapehtml对象"></a>_escapehtml对象</h4><p>_escapehtml对象是Juicer定义的内部对象，里面包括了&lt;、&gt;、&amp;、”、’、/等特殊字符对应HTML中的表示符，及标识符替换方法、转换方法、数据检测方法。</p>
 <pre><code>var __escapehtml = {
     //特殊字符对应HTML中的表示符
     escapehash: {
@@ -242,7 +248,7 @@
         return typeof(data) === &apos;undefined&apos; ? &apos;&apos; : data;
     }
 };       
-</code></pre><p>2、_throw()异常打印<br>Juicer内部提供的异常打印方法，通过方法实现代码可看出，如果抛出异常直接控制台打印出错误日志。    </p>
+</code></pre><h4 id="throw-异常打印"><a href="#throw-异常打印" class="headerlink" title="_throw()异常打印"></a>_throw()异常打印</h4><p>Juicer内部提供的异常打印方法，通过方法实现代码可看出，如果抛出异常直接控制台打印出错误日志。    </p>
 <pre><code>var __throw = function(error) {
     if(typeof(console) !== &apos;undefined&apos;) {
         if(console.warn) {
@@ -258,7 +264,7 @@
 
     throw(error);
 };      
-</code></pre><p>3、_creator()内部创建对象方法<br>Juicer提供了一个内部使用的创建对象的方法，并创建其属性。     </p>
+</code></pre><h4 id="creator-内部创建对象方法"><a href="#creator-内部创建对象方法" class="headerlink" title="_creator()内部创建对象方法"></a>_creator()内部创建对象方法</h4><p>Juicer提供了一个内部使用的创建对象的方法，并创建其属性。     </p>
 <pre><code>var __creator = function(o, proto) {
     o = o !== Object(o) ? {} : o;
 
@@ -280,8 +286,7 @@
 
     return n;
 };       
-</code></pre><p>4、annotate(fn)获取方法的注解形式    </p>
-<pre><code>var annotate = function(fn) {
+</code></pre><h4 id="annotate-fn-获取方法的注解形式"><a href="#annotate-fn-获取方法的注解形式" class="headerlink" title="annotate(fn)获取方法的注解形式"></a>annotate(fn)获取方法的注解形式</h4><pre><code>var annotate = function(fn) {
     var FN_ARGS = /^function\s*[^\(]*\(\s*([^\)]*)\)/m;
     var FN_ARG_SPLIT = /,/;
     var FN_ARG = /^\s*(_?)(\S+?)\1\s*$/;
@@ -313,7 +318,7 @@
 
     return [args, fnBody];
 };      
-</code></pre><p>5、Juicer定义一些版本和初始化的东西<br>这里面是Juicer定义模板缓存、Juicer版本号、Juicer取值符号等，默认Juicer是开启模板缓存功能，这样是可以是模板编译一次以后就不用再次编译了，提高性能。并且定义了取值符${}或转义取值符&amp;&amp;{}等等。    </p>
+</code></pre><h4 id="Juicer定义一些版本和初始化的东西"><a href="#Juicer定义一些版本和初始化的东西" class="headerlink" title="Juicer定义一些版本和初始化的东西"></a>Juicer定义一些版本和初始化的东西</h4><p>这里面是Juicer定义模板缓存、Juicer版本号、Juicer取值符号等，默认Juicer是开启模板缓存功能，这样是可以是模板编译一次以后就不用再次编译了，提高性能。并且定义了取值符${}或转义取值符&amp;&amp;{}等等。    </p>
 <pre><code>juicer.__cache = {};//缓存默认开启
 juicer.version = &apos;0.6.14&apos;;//版本号
 juicer.settings = {};//相关设置信息
@@ -341,7 +346,7 @@ juicer.options = {//初始化数据
         __juicer: juicer
     }, {})
 };      
-</code></pre><p>6、juicer.set(conf, value)设置配置属性值<br>set()方法用以手动设置Juicer的配置属性值，或者设置操作标签值，如果要设置操作标签值，conf必须要tag::开头。    </p>
+</code></pre><h4 id="juicer-set-conf-value-设置配置属性值"><a href="#juicer-set-conf-value-设置配置属性值" class="headerlink" title="juicer.set(conf, value)设置配置属性值"></a>juicer.set(conf, value)设置配置属性值</h4><p>set()方法用以手动设置Juicer的配置属性值，或者设置操作标签值，如果要设置操作标签值，conf必须要tag::开头。    </p>
 <pre><code>juicer.set = function(conf, value) {
     var that = this;
 
@@ -378,7 +383,7 @@ juicer.options = {//初始化数据
         }
     }
 };      
-</code></pre><p>7、juicer.register(fname, fn)对象方法注册<br>第一个参数传入fname是模板对象或者是#id，fn是自定义函数。     </p>
+</code></pre><h4 id="juicer-register-fname-fn-对象方法注册"><a href="#juicer-register-fname-fn-对象方法注册" class="headerlink" title="juicer.register(fname, fn)对象方法注册"></a>juicer.register(fname, fn)对象方法注册</h4><p>第一个参数传入fname是模板对象或者是#id，fn是自定义函数。     </p>
 <pre><code>juicer.register = function(fname, fn) {
     //获取Juicer内部定义方法数组对象
     var _method = this.options._method;
@@ -390,7 +395,7 @@ juicer.options = {//初始化数据
     //将自定义的方法添加进方法数组中
     return _method[fname] = fn;
 };       
-</code></pre><p>8、juicer.unregister(fname)注销对象绑定方法<br>根据传入的方法名，将该方法从juicer定义的方法数组中移除。    </p>
+</code></pre><h4 id="juicer-unregister-fname-注销对象绑定方法"><a href="#juicer-unregister-fname-注销对象绑定方法" class="headerlink" title="juicer.unregister(fname)注销对象绑定方法"></a>juicer.unregister(fname)注销对象绑定方法</h4><p>根据传入的方法名，将该方法从juicer定义的方法数组中移除。    </p>
 <pre><code>juicer.unregister = function(fname) {
     var _method = this.options._method;
 
@@ -399,8 +404,7 @@ juicer.options = {//初始化数据
         return delete _method[fname];
     }
 };      
-</code></pre><p>9、juicer.template(options)根据选项参数生成模板并返回模板对象   </p>
-<p>10、juicer.compile(tp1, options)根据模板对象及参数，编译模板但不渲染<br>第一个参数tp1是定义好的模板对象，options参数是数据集，此方法只将模板编译并放到内存中，并不会马山渲染。    </p>
+</code></pre><h4 id="juicer-template-options-根据选项参数生成模板并返回模板对象"><a href="#juicer-template-options-根据选项参数生成模板并返回模板对象" class="headerlink" title="juicer.template(options)根据选项参数生成模板并返回模板对象"></a>juicer.template(options)根据选项参数生成模板并返回模板对象</h4><h4 id="juicer-compile-tp1-options-根据模板对象及参数，编译模板但不渲染"><a href="#juicer-compile-tp1-options-根据模板对象及参数，编译模板但不渲染" class="headerlink" title="juicer.compile(tp1, options)根据模板对象及参数，编译模板但不渲染"></a>juicer.compile(tp1, options)根据模板对象及参数，编译模板但不渲染</h4><p>第一个参数tp1是定义好的模板对象，options参数是数据集，此方法只将模板编译并放到内存中，并不会马山渲染。    </p>
 <pre><code>juicer.compile = function(tpl, options) {
     //获取数据集，并组装成苏剧对象。
     if(!options || options !== this.options) {
@@ -448,8 +452,7 @@ juicer.options = {//初始化数据
         };
     }
 };       
-</code></pre><p>11、juicer.to_html(tp1, data, options)将模板和对应数据生成HTML代码并返回     </p>
-<pre><code>juicer.to_html = function(tpl, data, options) {
+</code></pre><h4 id="juicer-to-html-tp1-data-options-将模板和对应数据生成HTML代码并返回"><a href="#juicer-to-html-tp1-data-options-将模板和对应数据生成HTML代码并返回" class="headerlink" title="juicer.to_html(tp1, data, options)将模板和对应数据生成HTML代码并返回"></a>juicer.to_html(tp1, data, options)将模板和对应数据生成HTML代码并返回</h4><pre><code>juicer.to_html = function(tpl, data, options) {
     if(!options || options !== this.options) {
         options = __creator(options, this.options);
     }
@@ -502,7 +505,7 @@ juicer.options = {//初始化数据
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Juicer模板引擎源码介绍" data-title="Juicer模板引擎源码介绍" data-url="http://lanceng.com/2016/08/05/Juicer模板引擎源码介绍/"></div>
+	<div class="ds-thread" data-thread-key="Juicer模板引擎源码介绍" data-title="Juicer模板引擎源码介绍" data-url="http://lcsmile.cn/http://lanceng.com/2016/08/05/Juicer模板引擎源码介绍/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -518,6 +521,7 @@ juicer.options = {//初始化数据
 	</script>
 	<!-- 多说公共JS代码 end -->
 </div>
+
 
 
 

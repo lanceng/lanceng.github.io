@@ -217,6 +217,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <div id="toc" class="toc-article">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#绘图方法"><span class="toc-text">绘图方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）绘制路径"><span class="toc-text">（1）绘制路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）绘制矩形"><span class="toc-text">（2）绘制矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）绘制文本"><span class="toc-text">（3）绘制文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）绘制圆形和扇形"><span class="toc-text">（4）绘制圆形和扇形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（6）设置阴影"><span class="toc-text">（6）设置阴影</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图像处理方法"><span class="toc-text">图像处理方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#drawImage方法"><span class="toc-text">drawImage方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getImageData方法，putImageData方法"><span class="toc-text">getImageData方法，putImageData方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toDataURL方法"><span class="toc-text">toDataURL方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#save方法，restore方法"><span class="toc-text">save方法，restore方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动画"><span class="toc-text">动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#像素处理"><span class="toc-text">像素处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#灰度效果"><span class="toc-text">灰度效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复古效果"><span class="toc-text">复古效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红色蒙版效果"><span class="toc-text">红色蒙版效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#亮度效果"><span class="toc-text">亮度效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反转效果"><span class="toc-text">反转效果</span></a></li></ol></li></ol>
+</div>
+---------------------------------------------------------------------------------------------
+      
         <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>Canvas API（画布）用于在网页实时生成图像，并且可以操作图像内容，基本上它是一个可以用JavaScript操作的位图（bitmap）。<br>使用前，首先需要新建一个canvas网页元素。<br><a id="more"></a><br>    <canvas id="myCanvas" width="400" height="200"><br>         您的浏览器不支持canvas！<br>    </canvas>    </p>
 <p>上面代码中，如果浏览器不支持这个API，则就会显示canvas标签中间的文字——“您的浏览器不支持canvas！”。<br>每个canvas元素都有一个对应的context对象（上下文对象），Canvas API定义在这个context对象上面，所以需要获取这个对象，方法是使用getContext方法。    </p>
 <pre><code>var canvas = document.getElementById(&apos;myCanvas&apos;);
@@ -512,7 +518,7 @@ return pixels;
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="HTML5-Canvas-API" data-title="HTML5--Canvas API" data-url="http://lanceng.com/2015/01/17/HTML5-Canvas-API/"></div>
+	<div class="ds-thread" data-thread-key="HTML5-Canvas-API" data-title="HTML5--Canvas API" data-url="http://lcsmile.cn/http://lanceng.com/2015/01/17/HTML5-Canvas-API/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -528,6 +534,7 @@ return pixels;
 	</script>
 	<!-- 多说公共JS代码 end -->
 </div>
+
 
 
 
